@@ -1,0 +1,43 @@
+@startuml
+|教务处|
+start
+:安排考试;
+:考试安排表;
+|教师|
+:出卷;
+split
+:A、B试卷;
+split again
+:"打印审批表";
+|系主任|
+:审批签字;
+:打印审批表;
+end split
+|教务处|
+:打印试卷;
+:试卷;
+|学生|
+:参加考试;
+:答卷;
+|教师|
+:阅卷出成绩;
+split
+:成绩单;
+|教务处|
+if(有不及格) then (有)
+:安排补考;
+split
+:补考安排表;
+detach
+split again
+ end split
+endif
+split again
+|教师|
+:答卷;
+:装订存档;
+|教师|
+end split
+:期末流程结束;
+stop
+@enduml
