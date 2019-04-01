@@ -50,17 +50,17 @@
 </tr>
 <tr>
 <td colspan="2">
-    2a.非法读者
-    &nbsp;&nbsp;&nbsp;&nbsp;1.系统提示错误并拒绝接受输入
-    2b.读者借书数已达限额
-    &nbsp;&nbsp;&nbsp;&nbsp;1.系统提示错误并拒绝接受输入
-    5a.读者借书数已达限额
-        &nbsp;&nbsp;&nbsp;&nbsp;1.系统提示，并要求结束输入
-        &nbsp;&nbsp;&nbsp;&nbsp;2.图书管理员确认借书完成
-    5b.读者有该书的预定纪录
-            &nbsp;&nbsp;&nbsp;&nbsp;1.删除该书的预定信息
-            &nbsp;&nbsp;&nbsp;&nbsp;2.系统提示重新输入借书信息
-            &nbsp;&nbsp;&nbsp;&nbsp;2.系统提示，并要求结束输入
+    2a.非法读者<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;1.系统提示错误并拒绝接受输入<br>
+    2b.读者借书数已达限额<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;1.系统提示错误并拒绝接受输入<br>
+    5a.读者借书数已达限额<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;1.系统提示，并要求结束输入<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;2.图书管理员确认借书完成<br>
+    5b.读者有该书的预定纪录<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;1.删除该书的预定信息<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;2.系统提示重新输入借书信息<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;2.系统提示，并要求结束输入<br>
 </td>
 </tr>
 </table>
