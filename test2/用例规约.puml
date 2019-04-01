@@ -1,7 +1,0 @@
-@startuml
-actor 图书管理员 as Admin
-actor 读者 as User
-left to right direction
-Admin --> (借出图书)
-(借出图书) --> User
-@enduml
