@@ -12,6 +12,7 @@ rectangle {
   Admin --> (归还图书)
   Admin --> (维护书目)
   Admin --> (维护读者信息)
+  Admin --> (赔偿登记)
   (查询书目) <--  User
   (查询借阅情况) <--  User
   (预定图书) <--  User
