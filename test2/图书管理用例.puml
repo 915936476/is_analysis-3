@@ -1,0 +1,15 @@
+@startuml
+actor 图书管理员 as Admin
+actor 读者 as User
+left to right direction
+rectangle {
+  Admin --> (借出图书)
+  Admin --> (归还图书)
+  Admin --> (维护书目)
+  Admin --> (维护读者信息)
+  (查询书目) <--  User
+  (查询借阅情况) <--  User
+  (预定图书) <--  User
+  (取消预定) <-- User
+}
+@enduml
