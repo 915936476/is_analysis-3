@@ -5,6 +5,7 @@ left to right direction
 rectangle {
   Admin --> (借出图书)
   Admin --> (归还图书)
+  Admin --> (续借图书)
   Admin --> (维护书目)
   Admin --> (维护读者信息)
   Admin --> (赔偿登记)
