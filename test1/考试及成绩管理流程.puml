@@ -1,4 +1,11 @@
 @startuml
+skinparam activity {
+  StartColor red
+  BarColor SaddleBrown
+  EndColor Silver
+  FontName 黑体
+  fontSize 14px
+}
 |教务处|
 start
 :安排考试;
@@ -31,6 +38,7 @@ split
 detach
 split again
  end split
+else(无)
 endif
 split again
 |教师|
