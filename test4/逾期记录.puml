@@ -1,0 +1,30 @@
+@startuml
+actor admin as "图书管理员"
+participant "读者" as A
+participant "借书记录" as B
+participant "还书记录" as C
+participant "逾期记录" as D
+participant "罚款细则" as E
+admin-> A: 取读者信息
+activate admin
+activate A
+admin <- A: 读者信息
+deactivate A
+admin -> B:取读者借书情况
+activate B
+ B->admin:借书信息
+deactivate B
+admin -> C:查看读者还书信息
+activate C
+ C->admin:还书信息
+deactivate C
+admin -> D:设定逾期记录
+activate D
+D->E:查询罚款细则
+activate E
+E->D:匹配罚款细则
+deactivate E
+D->admin:逾期信息
+deactivate D
+deactivate admin
+@enduml

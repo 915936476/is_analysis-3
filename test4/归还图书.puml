@@ -1,0 +1,22 @@
+@startuml
+actor admin as "图书管理员"
+participant ":读者" as A
+participant ":借书记录" as B
+participant ":还书记录" as C
+admin-> A: 取读者信息
+activate admin
+activate A
+admin <- A: 读者信息
+deactivate A
+admin -> B:取读者借书情况
+activate B
+ B->admin:借书信息
+deactivate B
+admin -> C:查询读者还书情况
+activate C
+ C->admin:还书情况
+admin -> C:记录读者还书信息
+ C->admin:还书记录结果
+deactivate C
+deactivate admin
+@enduml

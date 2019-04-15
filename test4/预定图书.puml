@@ -1,0 +1,16 @@
+@startuml
+actor user as "读者"
+participant "图书资源" as A
+participant "预定记录" as B
+activate user
+user->A:查询图书信息
+activate A
+A->user:图书信息
+deactivate A
+user->B:查询读者预定记录
+activate B
+B->user:读者预定记录
+user->B:提交图书预定信息
+B->user:图书预定结果
+deactivate B
+@enduml
