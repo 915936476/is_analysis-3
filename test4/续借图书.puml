@@ -1,0 +1,24 @@
+@startuml
+actor 图书管理员
+activate 图书管理员
+图书管理员->读者:验证读者信息
+activate 读者
+deactivate 读者
+loop
+图书管理员->借书记录:输入图书信息查询借书记录
+activate 借书记录
+借书记录->馆藏书籍资源:取书籍信息
+activate 馆藏书籍资源
+馆藏书籍资源->借书记录:读者当前正借阅书籍信息
+deactivate 馆藏书籍资源
+借书记录->图书管理员:借书记录
+deactivate 借书记录
+图书管理员->借书记录:更新预计归还时间
+activate 借书记录
+deactivate 借书记录
+end
+图书管理员->借书记录:打印续借清单
+activate 借书记录
+deactivate 借书记录
+deactivate 图书管理员
+@enduml

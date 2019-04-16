@@ -1,0 +1,15 @@
+@startuml
+actor 读者
+activate 读者
+读者->读者:验证读者信息
+loop
+读者->预定记录:查看预定记录
+activate 预定记录
+读者->预定记录:删除预定记录
+deactivate 预定记录
+end
+读者->预定记录:打印取消预定清单
+activate 预定记录
+deactivate 预定记录
+deactivate 读者
+@enduml

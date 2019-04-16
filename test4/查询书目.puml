@@ -1,0 +1,13 @@
+@startuml
+actor 读者
+activate 读者
+读者->读者:验证读者信息
+读者->馆藏目录:取馆藏目录
+activate 馆藏目录
+馆藏目录->馆藏图书资源:查询图书资源信息
+activate 馆藏图书资源
+馆藏图书资源->读者:返回图书资源信息
+deactivate 馆藏图书资源
+deactivate 馆藏目录
+deactivate 读者
+@enduml

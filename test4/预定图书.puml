@@ -1,16 +1,21 @@
 @startuml
-actor user as "读者"
-participant "图书资源" as A
-participant "预定记录" as B
-activate user
-user->A:查询图书信息
-activate A
-A->user:图书信息
-deactivate A
-user->B:查询读者预定记录
-activate B
-B->user:读者预定记录
-user->B:提交图书预定信息
-B->user:图书预定结果
-deactivate B
+actor 读者
+activate 读者
+读者->读者:验证读者信息
+loop
+读者->馆藏目录:取馆藏目录
+activate 馆藏目录
+馆藏目录->馆藏书籍资源:查询书目
+activate 馆藏书籍资源
+deactivate 馆藏书籍资源
+deactivate 馆藏目录
+读者->读者:查询已预定数目
+读者->预定记录:查询已预定书籍信息
+activate 预定记录
+读者->预定记录:登记预定记录
+deactivate 预定记录
+end
+读者->预定记录:打印预定清单
+activate 预定记录
+deactivate 预定记录
 @enduml
