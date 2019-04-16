@@ -1,5 +1,8 @@
 @startuml
-actor 图书管理员
+actor ": 图书管理员" as 图书管理员
+participant ": 馆藏书籍资源" as 馆藏书籍资源
+participant ": 图书品种" as 图书品种
+skinparam sequenceParticipant underline
 activate 图书管理员
 图书管理员->图书管理员:验证权限
 loop
@@ -7,9 +10,9 @@ loop
 activate 馆藏书籍资源
 馆藏书籍资源->图书品种:图书品种信息查询
 activate 图书品种
-图书品种->馆藏书籍资源:图书品种信息
+图书品种-->馆藏书籍资源:图书品种信息
 deactivate 图书品种
-馆藏书籍资源->图书管理员:书籍信息
+馆藏书籍资源-->图书管理员:书籍信息
 deactivate 馆藏书籍资源
 图书管理员->馆藏书籍资源:维护书籍信息
 activate 馆藏书籍资源
