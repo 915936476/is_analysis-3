@@ -108,7 +108,7 @@
 
 ## 2.界面设计
 ### 2.1界面设计github仓库地址
-    https://everythingtomyheart.github.io/is_analysis_pages/
+   [ui展示](https://everythingtomyheart.github.io/is_analysis_pages/)
 ### 2.2 界面设计图
 #### 2.2.1 借阅图书界面设计图
 ##### 借阅图书填写界面截图
