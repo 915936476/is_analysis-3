@@ -1,0 +1,7 @@
+@startuml
+
+object 用户{
+编号
+}
+
+@enduml
