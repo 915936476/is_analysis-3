@@ -1,0 +1,70 @@
+@startuml
+actor 教师 as teachers
+actor 学生 as students
+actor 用户 as users
+actor 管理员 as admin
+users <|-- teachers
+users <|-- students
+
+package 用户用例集 {
+users --up-> (登录)
+users --up-> (登出)
+users --up-> (修改密码)
+admin --up-> (登录)
+admin --up-> (登出)
+admin --up-> (修改密码)
+rectangle 用户管理{
+    users --up-> (查看用户信息)
+    users --up-> (修改用户信息)
+    admin --up->(查看用户信息)
+    admin --up->(新增用户信息)
+    admin --->(删除用户信息)
+    }
+}
+package 业务用例集 {
+    rectangle 课程管理{
+    admin --->(查看课程)
+    admin --->(新增课程)
+    admin --->(修改课程)
+    admin --->(删除课程)
+    teachers --->(选择当前学期开课课程)
+    teachers --->(查看课程)
+    students --->(选择当前学期开课课程)
+    students --->(查看课程)
+        rectangle 实验管理{
+        teachers --->(查看实验)
+        teachers --->(添加实验)
+        teachers --->(删除实验)
+        teachers --->(修改实验)
+        students --->(查看实验)
+            rectangle 查看学生{
+                teachers --->(学生列表)
+                students --->(学生列表)
+                teachers --->(评定成绩)
+                students --->(查看成绩)
+            }
+        }
+    }
+    rectangle 专业管理{
+        admin --->(查看专业)
+        admin --->(新增专业)
+        admin --->(修改专业)
+        admin --->(删除专业)
+    }
+    rectangle 学期管理{
+            admin --->(查看学期)
+            admin --->(新增学期)
+            admin --->(修改学期)
+            admin --->(删除学期)
+    }
+    rectangle 学期管理{
+            admin --->(查看开课信息)
+            admin --->(删除开课信息)
+            rectangle 新增开课信息+修改开课信息{
+            admin --->(选择专业)
+            admin --->(选择学期)
+            admin --->(选择全部课程信息)
+            }
+    }
+}
+@enduml
