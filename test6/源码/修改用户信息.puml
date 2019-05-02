@@ -1,0 +1,10 @@
+@startuml
+actor 修改用户信息页面
+actor api服务
+database 数据库存储
+修改用户信息页面-->修改用户信息页面:用户填写提供的可修改信息
+修改用户信息页面-->api服务:调用api:updateUserInfo,参数为github_name
+api服务-->数据库存储:存入新的github_name
+数据库存储-->api服务:返回修改数据的操作结果
+api服务-->修改用户信息页面:返回修改结果
+@enduml

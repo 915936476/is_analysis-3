@@ -1,10 +1,4 @@
 @startuml
-skinparam titleBorderRoundCorner 15
-skinparam titleBorderThickness 2
-skinparam titleBorderColor #Black
-skinparam titleFontSize 24
-Title 登录认证流程图
-
 database "前端存储Cookie\SessionStorage" as 前端存储
 actor Login页面
 actor API服务

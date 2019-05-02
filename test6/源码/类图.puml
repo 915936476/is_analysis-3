@@ -4,16 +4,17 @@
 用户 -- 用户状态
 专业 "1"--"n" 学生
 教师 "1"--"n" 部门
-教师 "1"--"n" 课程教师关联
-课程 "1"--"n" 课程教师关联
+教师 "1"--"n" 开课课程教师关联
+课程专业学期关联 "1"--"n" 开课课程教师关联
 课程 "1"--"n" 课程专业学期关联
 专业 "1"--"n" 课程专业学期关联
 学期 "1"--"n" 课程专业学期关联
-教师 "1"--"n" 实验
-课程 "1"--"n" 实验
+开课课程教师关联 "1"--"n" 实验
+开课课程教师关联 "1"--"n" 开课课程学生关联
 实验 "1"--"n" 评分标准
 总评分 "1"--"n" 详细评分
 评分标准 "1"--"n" 详细评分
+学生 "1"--"n" 总评分
 class 用户{
 <b>user_id</b> （用户编号）
 name（真实姓名）
@@ -56,9 +57,9 @@ term_name（学期名称）
 term_starttime（学期开始时间）
 term_endtime（学期结束时间）
 }
-class 课程教师关联{
-<b>course_teacher_id</b> （课程与教师关联编号）
-<b>course_id</b>（课程编号）
+class 开课课程教师关联{
+<b>course_teacher_id</b> （开课课程与教师关联编号）
+<b>course_major_term_id</b>（课程、专业与学期关联编号）
 <b>teacher_id</b>（教师职工号）
 }
 class 课程专业学期关联{
@@ -67,11 +68,14 @@ class 课程专业学期关联{
 <b>major_id</b>（专业编号）
 <b>course_id</b>（学期编号）
 }
+class 开课课程学生关联{
+<b>course_student_id</b> （开课课程学生关联编号）
+<b>course_teacher_id</b>（开课课程教师关联编号，开课课程教师关联表外键）
+}
 class 实验{
 <b>test_id</b> （实验编号）
 test_name （实验名称）
-<b>teacher_id</b>（教师职工号）
-<b>course_id</b>（课程编号）
+<b>course_teacher_id</b>（开课课程与教师关联编号，开课课程教师关联表外键）
 test_url （实验说明的github地址）
 }
 class 评分标准{
@@ -79,14 +83,14 @@ class 评分标准{
 <b>test_id</b> （实验编号）
 standard_name （标准名称）
 standard_detail （标准描述）
-standard_min （标准占比）
+standard_mix （标准占比）
 }
 class 详细评分{
 <b>detail_score_id</b> （详细评分编号）
 <b>test_id</b> （实验编号）
 <b>standard_id</b> （评分标准编号）
 <b>total_score_id</b> （总评分编号）
-score (分数）
+score （分数）
 detail_memo （评语）
 }
 class 总评分{
@@ -96,5 +100,6 @@ total_score （实验总分）
 <b>test_id</b> （实验编号）
 total_memo（总评语）
 update_date （批改时间）
+web_exists （网页是否存在）
 }
 @enduml

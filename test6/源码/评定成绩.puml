@@ -1,0 +1,13 @@
+@startuml
+actor teachers
+== 查看成绩 ==
+teachers -> students : 查询学生信息
+students -> TEST_TOTAL_SCORES: 查询全部实验成绩和总评语
+TEST_TOTAL_SCORES -> DETAIL_SCORES:查询详细实验成绩与评语
+DETAIL_SCORES->STANDARDS:查询实验评价标准
+STANDARDS -> TESTS:查询实验信息
+TESTS-->teachers:每个实验的信息、成绩和评语
+== 评定成绩 ==
+teachers -> TEST_TOTAL_SCORES : 录入并提交每个实验的成绩
+TEST_TOTAL_SCORES->DETAIL_SCORES:录入实验的详细评价
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+title 基于GitHub的实验管理平台--查看成绩用例的顺序图
+actor students
+students -> TEST_TOTAL_SCORES: 查询全部实验成绩和总评语
+TEST_TOTAL_SCORES -> DETAIL_SCORES:查询详细实验成绩与评语
+DETAIL_SCORES->STANDARDS:查询实验评价标准
+STANDARDS -> TESTS:查询实验信息
+TESTS-->students:每个实验的信息、成绩和评语
+@enduml

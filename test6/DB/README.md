@@ -1,4 +1,4 @@
-# 数据库设计
+# 数据库设计 [返回](../README.md)
 
 <div id="USERS"></div>
 
@@ -76,11 +76,11 @@
 
 <div id="COURSE_TEACHER"></div>
 
-### 9.课程教师关联表 COURSE_TEACHER
+### 9.开课课程教师关联表 COURSE_TEACHER
 |字段|类型|主键、外键|可以为空|默认值|约束|说明|
 |:---|:---|:---|:---|:---|:---|:---|
-|course_teacher_id|NUMBER(12,0)|主键|否| | |课程教师关联id|
-|course_id|NUMBER(12,0)|外键|否| | |课程id|
+|course_teacher_id|NUMBER(12,0)|主键|否| | |开课课程教师关联id|
+|course_major_term_id|NUMBER(12,0)|外键|否| | |课程、专业与学期关联编号，课程专业学期关联表外键|
 |teacher_id|NUMBER(10,0)|外键|否| | |教师id|
 
 <div id="COURSE_MAJOR_TERM"></div>
@@ -93,20 +93,27 @@
 |major_id|NUMBER(10,0)|外键|否| | |专业id，专业表外键|
 |term_id|Number(6,0)|外键|否| | |开课学期id，学期表外键|
 
+<div id="COURSE_MAJOR_TERM"></div>
+
+### 11.开课课程学生关联表  COURSE_STUDENTS
+|字段|类型|主键、外键|可以为空|默认值|约束|说明|
+|:---|:---|:---|:---|:---|:---|:---|
+|course_student_id|NUMBER(12,0)|主键|否| | |课程、专业与学期关联编号|
+|course_teacher_id|NUMBER(12,0)|外键|否| | |开课课程教师关联id，开课课程教师关联表外键|
+
 <div id="TESTS"></div>
 
-### 11.实验表 TESTS
+### 12.实验表 TESTS
 |字段|类型|主键、外键|可以为空|默认值|约束|说明|
 |:---|:---|:---|:---|:---|:---|:---|
 |test_id|NUMBER(6,0)|主键|否| | |实验id|
 |test_name|VARCHAR2(256BYTE)|否| | |实验名称|
-|teacher_id|NUMBER(10,0)|外键|否| | |发布实验老师id，教师表外键|
-|course_id|NUMBER(12,0)|外键|否| | |课程id|
+|course_teacher_id|NUMBER(12,0)|外键|否| | |开课课程教师关联id，开课课程教师关联表外键|
 |test_url|VARCHAR(256BYTE)| |否| | |实验说明github地址|
 
 <div id="STANDARDS"></div>
 
-### 12.评分标准表 STANDARDS
+### 13.评分标准表 STANDARDS
 |字段|类型|主键、外键|可以为空|默认值|约束|说明|
 |:---|:---|:---|:---|:---|:---|:---|
 |standard_id|NUMBER(6,0)|主键|否| | |评分标准id|
@@ -117,7 +124,7 @@
 
 <div id="DETAIL_SCORES"></div>
 
-### 13.详细评分表 DETAIL_SCORES
+### 14.详细评分表 DETAIL_SCORES
 |字段|类型|主键、外键|可以为空|默认值|约束|说明|
 |:---|:---|:---|:---|:---|:---|:---|
 |detail_score_id|NUMBER(6,0)|主键|否| | |详细评分id|
@@ -129,7 +136,7 @@
 
 <div id="TEST_TOTAL_SCORES"></div>
 
-### 14.实验总评分表 TEST_TOTAL_SCORES
+### 15.实验总评分表 TEST_TOTAL_SCORES
 |字段|类型|主键、外键|可以为空|默认值|约束|说明|
 |:---|:---|:---|:---|:---|:---|:---|
 |total_score_id|NUMBER(6,0)|主键|否| | |总评分id|
@@ -138,6 +145,7 @@
 |student_id|NUMBER(12,0)|外键|否| | |学生id，学生表外键|
 |total_memo|VARCHAR2(400BYTE)| |是|空| |总评语|
 |update_date|DATE| |是|空| |老师批改时间，为空为未批改|
+|web_exists|BOOLEAN| |是|空| |实验网页是否存在，空为不存在|
 
 
 

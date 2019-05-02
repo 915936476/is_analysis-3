@@ -1,0 +1,15 @@
+@startuml
+actor 教师
+activate 教师
+教师-->教师:填写实验信息
+教师->tests:添加实验信息
+activate tests
+loop
+tests->standards:添加评价标准信息
+activate standards
+deactivate standards
+end
+tests-->教师:返回添加信息
+deactivate tests
+deactivate 教师
+@enduml

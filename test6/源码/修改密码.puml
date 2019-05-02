@@ -1,0 +1,19 @@
+@startuml
+database "前端存储Cookie\SessionStorage" as 前端存储
+actor 修改密码界面
+actor Login页面
+actor api服务
+database 数据库存储
+== 修改密码界面 ==
+修改密码界面->api服务:API请求:<b>getPublicKey<b>，获取公钥
+api服务->修改密码界面:返回公钥：PublicKey
+修改密码界面-->修改密码界面:用户按规定输入相关密码信息
+修改密码界面-->修改密码界面:使用相应加密程序通过公钥加密输入的密码
+修改密码界面-->api服务:API请求:setPassword,参数是用户旧密码与修改后新密码
+api服务->api服务:使用解析程序根据私钥解密收到的加密密码，得到用户密码
+api服务->数据库存储:从数据库取出用户hash密码
+数据库存储->api服务:返回该用户的hash密码
+api服务->api服务:比较hash密码与用户旧密码
+api服务->前端存储:调用注销程序,注销用户登录状态，删除Cookies['session']信息
+api服务->Login页面:重定向到login页面
+@enduml
