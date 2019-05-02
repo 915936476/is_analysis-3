@@ -93,7 +93,7 @@
 |major_id|NUMBER(10,0)|外键|否| | |专业id，专业表外键|
 |term_id|Number(6,0)|外键|否| | |开课学期id，学期表外键|
 
-<div id="COURSE_MAJOR_TERM"></div>
+<div id="COURSE_STUDENTS"></div>
 
 ### 11.开课课程学生关联表  COURSE_STUDENTS
 |字段|类型|主键、外键|可以为空|默认值|约束|说明|
