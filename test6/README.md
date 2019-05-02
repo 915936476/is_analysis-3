@@ -14,6 +14,6 @@
 [详情](DB/README.md)
 
 ## 6.用例及界面详细设计
-1.[登录用例]() [界面]()
+1.[登录用例](./用例/登录.md) [界面](https://Everythingtomyheart.github.io/is_analysis_pages/test6/ui/登录.html)
 
-2.[登出用例]() [界面]()
+2.[登出用例](./用例/登出.md) [界面](https://Everythingtomyheart.github.io/is_analysis_pages/test6/ui/登出_顶部菜单.html)
