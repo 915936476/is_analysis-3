@@ -3,6 +3,7 @@ actor 教师 as teachers
 actor 学生 as students
 actor 用户 as users
 actor 管理员 as admin
+users <|-- admin
 users <|-- teachers
 users <|-- students
 
@@ -10,16 +11,8 @@ package 用户用例集 {
 users --up-> (登录)
 users --up-> (登出)
 users --up-> (修改密码)
-admin --up-> (登录)
-admin --up-> (登出)
-admin --up-> (修改密码)
-rectangle 用户管理{
-    users --up-> (查看用户信息)
-    users --up-> (修改用户信息)
-    admin --up->(查看用户信息)
-    admin --up->(新增用户信息)
-    admin --->(删除用户信息)
-    }
+users --up-> (查看用户信息)
+users --up-> (修改用户信息)
 }
 package 业务用例集 {
     rectangle 课程管理{
