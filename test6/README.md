@@ -3,6 +3,7 @@
 ## 1.概述
 
 - 基于GitHub的实验管理平台的作用是在线管理实验成绩的Web应用系统。学生和老师的实验内容均存放在GitHUB 页面上。
+- 
 ## 2.系统总体结构 
 ![总体设计](总体设计.png)
 ## 3.用例图设计 [源码](源码/总设计.puml)
@@ -30,7 +31,7 @@
 
 8.[查看学生信息](./用例/查看学生信息.md)  [界面](https://Everythingtomyheart.github.io/is_analysis_pages/test6/ui/查看学生信息.html)
 
-8.[查看实验](./用例/查看实验.md)  [界面](https://Everythingtomyheart.github.io/is_analysis_pages/test6/ui/查看实验.html)
+9.[查看实验](./用例/查看实验.md)  [界面](https://Everythingtomyheart.github.io/is_analysis_pages/test6/ui/查看实验.html)
 
 10.[发布实验](./用例/发布实验.md)  [界面](https://Everythingtomyheart.github.io/is_analysis_pages/test6/ui/发布实验.html)
 
