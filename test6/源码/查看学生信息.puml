@@ -1,0 +1,12 @@
+@startuml
+title 基于GitHub的实验管理平台--查看学生信息用例的顺序图
+actor teachers
+teachers -> COURSE_TEACHER:查询课程教师关联信息
+activate teachers
+COURSE_TEACHER->COURSE_STUDENTS:查询课程下学生关联信息
+COURSE_STUDENTS->STUDENTS:查询学生信息
+STUDENTS->MAJORS:查询专业
+MAJORS-->STUDENTS:返回专业信息
+STUDENTS-->teachers:当前课程下的全部学生信息
+deactivate teachers
+@enduml

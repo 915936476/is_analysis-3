@@ -98,8 +98,9 @@
 ### 11.开课课程学生关联表  COURSE_STUDENTS
 |字段|类型|主键、外键|可以为空|默认值|约束|说明|
 |:---|:---|:---|:---|:---|:---|:---|
-|course_student_id|NUMBER(12,0)|主键|否| | |课程、专业与学期关联编号|
+|course_student_id|NUMBER(12,0)|主键|否| | |开课课程与学生关联编号|
 |course_teacher_id|NUMBER(12,0)|外键|否| | |开课课程教师关联id，开课课程教师关联表外键|
+|student_id|NUMBER(12,0)|外键|否| | |学生id，学生表外键|
 
 <div id="TESTS"></div>
 

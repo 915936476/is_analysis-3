@@ -1,0 +1,29 @@
+@startuml
+title 基于GitHub的实验管理平台--查看课程用例的顺序图
+actor students
+students -> COURSE_STUDENTS: 查询已选择的课程学生关联信息
+activate students
+COURSE_STUDENTS -> COURSE_TEACHER:查询已选择课程教师关联信息
+COURSE_TEACHER->COURSE_MAJOR_TERM:查询已选择课程专业学期关联信息
+COURSE_MAJOR_TERM->COURSES:查询已选择的全部课程信息
+COURSE_MAJOR_TERM->MAJORS:查询已选择的全部专业信息
+COURSE_MAJOR_TERM->TERMS:查询已选择的全部学期信息
+COURSES-->COURSE_MAJOR_TERM:返回课程信息
+MAJORS-->COURSE_MAJOR_TERM:返回专业信息
+TERMS-->COURSE_MAJOR_TERM:返回学期信息
+COURSE_MAJOR_TERM-->students:返回当前学期已选择的全部课程信息
+deactivate students
+actor teachers
+teachers -> COURSE_TEACHER:查询课程教师关联信息
+activate teachers
+COURSE_TEACHER->COURSE_MAJOR_TERM:查询已选择课程专业学期关联信息
+COURSE_MAJOR_TERM->COURSES:查询已选择的全部课程信息
+COURSE_MAJOR_TERM->MAJORS:查询已选择的全部专业信息
+COURSE_MAJOR_TERM->TERMS:查询已选择的全部学期信息
+COURSES-->COURSE_MAJOR_TERM:返回课程信息
+MAJORS-->COURSE_MAJOR_TERM:返回专业信息
+TERMS-->COURSE_MAJOR_TERM:返回学期信息
+COURSE_MAJOR_TERM-->students:返回当前学期已选择的全部课程信息
+COURSE_MAJOR_TERM-->teachers:返回当前学期已选择的全部课程信息
+deactivate teachers
+@enduml

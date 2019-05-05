@@ -1,0 +1,16 @@
+@startuml
+title 基于GitHub的实验管理平台--查看实验用例的顺序图
+actor students
+students -> COURSE_STUDENTS: 查看课程学生关联信息
+activate students
+COURSE_STUDENTS -> COURSE_TEACHER:查询课程教师关联信息
+COURSE_TEACHER->TESTS:查询课程下实验数据
+TESTS-->students:当前课程下的全部实验信息
+deactivate students
+actor teachers
+teachers -> COURSE_TEACHER:查询课程教师关联信息
+activate teachers
+COURSE_TEACHER->TESTS:查询课程下实验数据
+TESTS-->teachers:当前课程下的全部实验信息
+deactivate teachers
+@enduml
