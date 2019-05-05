@@ -9,7 +9,7 @@
     老师：可以查看所有学生的成绩。
     
 - API请求地址： 
-    接口基本地址/v1/api/getOneStudentResults/<student_id>
+    接口基本地址/v1/api/getOneStudentResults/<student_id>&&<course_teacher_id>
 
 - 请求方式 ：
     GET
@@ -19,6 +19,7 @@
   |参数名称|说明|
   |:---------:|:--------------------------------------------------------|      
   |student_id|学生的学号|
+  |course_teacher_id|关联课程编号|
     
 - 返回实例：
 
